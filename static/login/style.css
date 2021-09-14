@@ -1,0 +1,49 @@
+body {
+    background-image: url(../icons/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    overflow: hidden;
+    background-position: center;
+}
+
+html {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    padding: 16px 48px 0 48px;
+}
+
+#ok {
+    height: 128px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+    margin: 16px;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+select {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    margin: 8px;
+}
+
+::placeholder {
+    color: lightgrey;
+}
+
+#placeholder {
+    color: lightgray;
+}

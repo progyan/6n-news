@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>новости 6н - зарегистрироваться</title>
+        <link rel="icon" href="../icon.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>ВОЙДИТЕ В 6Н</h1>
+        <div class="container">
+            <select id="login" onchange="loginChanged()">
+                <option id="placeholder">Логин</option>
+                <option>Ю. Е. Козуб</option>
+                <option>Ученик 6Н</option>
+            </select>
+        </div>
+        <div class="container" id="getpass">
+            <input type="password" id="password" placeholder="Пароль">
+            <input type="checkbox" id="checkpass" onclick="toggleVisibility()">
+            <label for="checkpass">Показать пароль</label>
+        </div>
+        <div class="container">
+            <img src="../icons/ok.jpg" id="ok" onclick="submitLogin()">
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

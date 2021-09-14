@@ -1,0 +1,68 @@
+p, h3, pre {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    line-height: 0em;
+    text-align: center;
+}
+
+#description {
+    color: gray;
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 0.4em;
+}
+
+body {
+    padding: 16px;
+}
+
+#main {
+    box-shadow: 0 2px 16px #0004;
+    border-radius: 16px;
+    border-top: 4px solid #ddd;
+    border-bottom: 4px solid #ddd;
+    padding: 16px 16px 16px 32px;
+    overflow: hidden;
+}
+
+#creator {
+    position: relative;
+    float: right;
+    display: inline-flex;
+    align-items: center;
+}
+
+#face {
+    height: 48px;
+    display: inline;
+    border-radius: 48px;
+    margin-left: 16px;
+    box-shadow: 0 2px 16px #0004;
+}
+
+#delete {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    height: 64px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+}
+
+#back {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    height: 64px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+}
+
+#creator-name {
+    display: inline;
+}

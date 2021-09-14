@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>новости 6н - написать</title>
+        <link rel="icon" href="../icon.jpg">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <input type="text" id="title" style="text-transform:uppercase" placeholder="(НАЗВАНИЕ НОВОСТИ)" maxlength="30">
+        <p id="description">
+            <select id="news-type">
+                <option>обычная</option>
+                <option>хорошая</option>
+                <option>плохая</option>
+            </select> новость от <span id="c-name"></span>
+        </p>
+        <div id="main">
+            <div id="text-container">
+                <textarea id="text" placeholder="Текст новости" maxlength="1600"></textarea>
+            </div>
+            <div id="creator">
+                <p id="creator-name"></p>
+                <img id="face">
+            </div>
+        </div>
+        <img src="../icons/ok.jpg" id="ok" onclick="submitNews()">
+        <img src="../icons/back.jpg" id="back" onclick="window.location.href = '../main/index.html'">
+        <script src="script.js"></script>
+    </body>
+</html>

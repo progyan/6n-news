@@ -1,0 +1,129 @@
+.news {
+    box-shadow: 0 2px 16px #0004;
+    border-radius: 16px;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border: 4px solid #ddd;
+    margin-bottom: 16px;
+    background-color: white;
+}
+
+.news:hover {
+    background-color: #ddd;
+}
+
+.creator {
+    float: right;
+    border-bottom: 4px solid #ddd;
+    border-left: 4px solid #ddd;
+    padding: 16px;
+    border-radius: 0 16px 0 16px;
+    display: inline-flex;
+    align-items: center;
+    width: 9em;
+}
+
+.content {
+    padding: 16px;
+}
+
+p, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    line-height: 0em;
+    text-align: center;
+}
+
+.creator-name {
+    margin: 0;
+    display: inline;
+    font-size: 0.9em;
+}
+
+.preview-text {
+    color: #0008;
+    font-size: 0.9em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 80%;
+}
+
+#description {
+    color: gray;
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 0.4em;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+body {
+    padding: 16px;
+    background-image: url(../icons/lonely.jpg);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+.face {
+    height: 48px;
+    display: inline;
+    border-radius: 48px;
+    margin-right: 16px;
+    box-shadow: 0 2px 16px #0004;
+}
+
+#new {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    height: 64px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+}
+
+#username {
+    position: fixed;
+    box-shadow: 0 0 10px #0004;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    border-bottom-left-radius: 16px;
+    margin: 0;
+}
+
+.linklike {
+    text-decoration: underline;
+    color: blue;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #e8e8e8;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: url(../icons/slider.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #b0b0b0;
+}
