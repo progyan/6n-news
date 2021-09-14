@@ -2,7 +2,7 @@ newsList = [];
 
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
-        document.getElementById("un-span").innerText = "Ты - " + user + ".";
+        document.getElementById("un-span").innerText = user;
     }) 
 });
 

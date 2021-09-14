@@ -1,12 +1,10 @@
 let lowercase_names = {
-    "Пельмень": "пельменя",
-    "Бойстул": "бойстула",
-    "Ян": "яна"
+    "Ю. Е. Козуб": "юлии евгеньевны козуб"
 };
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
-        if (user == "Гость") {
-            alert("ты слишком чужой = нельзя");
+        if (user == "Ученик 6Н") {
+            alert("Ученики не могут добавлять новости без разрешения классного руководителя.");
             window.location.href = '../main/index.html';
         }
         document.getElementById("c-name").innerText = lowercase_names[user];

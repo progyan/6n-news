@@ -1,7 +1,5 @@
 let lowercase_names = {
-    "Пельмень": "пельменя",
-    "Бойстул": "бойстула",
-    "Ян": "яна"
+    "Ю. Е. Козуб": "юлии евгеньевны козуб"
 };
 
 let news = JSON.parse(localStorage.getItem("currentNews"));
@@ -13,11 +11,11 @@ document.getElementById("creator-name").innerText = "-- " + news[0];
 document.getElementById("face").src = "../faces/" + news[0] + ".jpg";
 
 function deleteNews() {
-    confirm("Вы точно хотите порвать эту пельменовость на куски и сжечь?");
+    confirm("Вы точно хотите удалить эту новость?");
     fetch("/deletenews/" + news[4], {"mode": "no-cors"}).then((resp) => {
         resp.json().then((code) => {
             if (code == "NO RIGHTS") {
-                alert("Это не твоя новость. Ты не можешь рвать чужое имущество. УК РФ Статья 167: Умышленное уничтожение или повреждение имущества.");
+                alert("Это не ваша новость. Вы не можете удалять чужие новости.");
             } else {
                 window.location.href = '../main/index.html';
             }
