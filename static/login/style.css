@@ -16,6 +16,8 @@ h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 3em;
     padding: 16px 48px 0 48px;
+    color: white;
+    text-shadow: 0 0 20px black;
 }
 
 #ok {
