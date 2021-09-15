@@ -4,7 +4,7 @@ let lowercase_names = {
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
         if (user == "Ученик 6Н") {
-            alert("Ученики не могут добавлять новости без разрешения классного руководителя.");
+            alert("Ученики не могут добавлять новости.");
             window.location.href = '../main/index.html';
         }
         document.getElementById("c-name").innerText = lowercase_names[user];

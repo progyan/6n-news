@@ -3,6 +3,9 @@ newsList = [];
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
         document.getElementById("un-span").innerText = user + ".";
+        if (user != "Ю. Е. Козуб") {
+            document.getElementById("new").style.display = "none";
+        }
     }) 
 });
 

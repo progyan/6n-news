@@ -49,3 +49,8 @@ select {
 #placeholder {
     color: lightgray;
 }
+
+label {
+    color: white;
+    text-shadow: 0 0 20px black;
+}
