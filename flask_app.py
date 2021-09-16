@@ -4,6 +4,7 @@ from markupsafe import escape
 from flask_cors import CORS
 import psycopg2
 import os
+from datetime import date
 
 app = Flask(__name__)
 app.secret_key = "1234567890лормс"#os.environ["SESSION_KEY"].encode()
@@ -13,17 +14,22 @@ CORS(app)
 def news_list():
     with get_connection() as con:
         cur = con.cursor()
-        cur.execute('SELECT creator, title, content, news_type, id FROM news;')
+        cur.execute('SELECT creator, title, content, news_type, id, creation_date FROM news;')
         #return jsonify(_news)
-        return jsonify(cur.fetchall())
+        ans = cur.fetchall()
+        app.logger.debug(ans[0][5])
+        for i in range(len(ans)):
+            ans[i] = list(ans[i])
+            ans[i][5] = ans[i][5].strftime("%d.%m.%Y")
+        return jsonify(ans)
 
 @app.post("/addnews")
 def add_news():
     if request.json[1] != "" and request.json[2] != "":
         with get_connection() as con:
             cur = con.cursor()
-            cur.execute('INSERT INTO news (creator, title, content, news_type) VALUES (%s, %s, %s, %s);',
-                    request.json)
+            cur.execute('INSERT INTO news (creator, title, content, news_type, creation_date) VALUES (%s, %s, %s, %s, %s);',
+                    request.json + [date.today()])
             con.commit()
             #_news.append(request.json)
             return jsonify("OK")
@@ -74,7 +80,7 @@ def get_connection():
         app.logger.debug("Database from Heroku")
         return psycopg2.connect(os.environ["DATABASE_URL"])
     # return connection to dev server
-    return psycopg2.connect(dbname='pelmenovosti', user='pelmenovosti', password='pelmenovosti', 
+    return psycopg2.connect(database='6n', user='postgres', password='postgres', 
             host='localhost', port=5432)
 
 #app.run()

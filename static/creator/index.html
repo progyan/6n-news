@@ -27,8 +27,8 @@
                 <img id="face">
             </div>
         </div>
-        <img src="../icons/ok.jpg" id="ok" onclick="submitNews()">
-        <img src="../icons/back.jpg" id="back" onclick="window.location.href = '../main/index.html'">
+        <button id="ok" onclick="submitNews()">Готово</button>
+        <button id="back" onclick="if(confirm('Выйти? Изменения не сохранятся!')){window.location.href = '../main/index.html'}">Назад</button>
         <script src="script.js"></script>
     </body>
 </html>

@@ -42,7 +42,7 @@ function fillNews() {
         faceNode.className = "face";
         creatorNode.appendChild(faceNode);
         let creatorNameNode = document.createElement("P");
-        let textNode = document.createTextNode(news[0]);
+        let textNode = document.createTextNode(news[0] + ", " + news[5]);
         creatorNameNode.appendChild(textNode);
         creatorNameNode.className = "creator-name";
         creatorNode.appendChild(creatorNameNode);

@@ -22,9 +22,18 @@ h1 {
 
 #ok {
     height: 128px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 32px #000;
     border-radius: 64px;
     margin: 16px;
+    transition-property: box-shadow bottom;
+    transition-duration: 0.5s;
+    border: 0;
+    background-color: white;
+}
+
+#ok:hover {
+    box-shadow: 0 0px 24px #000;
+    cursor: pointer;
 }
 
 * {

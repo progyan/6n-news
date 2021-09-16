@@ -1,4 +1,4 @@
-p, textarea {
+p, textarea, button {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -32,9 +32,18 @@ body {
     position: fixed;
     bottom: 16px;
     left: 16px;
-    height: 64px;
+    padding: 16px;
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
+    transition-property: box-shadow bottom;
+    transition-duration: 0.5s;
+    background-color: white;
+    border: 0;
+}
+
+#back:hover {
+    box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
 }
 
 ::placeholder {
@@ -73,9 +82,18 @@ body {
     position: fixed;
     bottom: 16px;
     right: 16px;
-    height: 64px;
+    padding: 16px;
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
+    transition-property: box-shadow bottom;
+    transition-duration: 0.5s;
+    border: 0;
+    background-color: white;
+}
+
+#ok:hover {
+    box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
 }
 
 #creator-name {

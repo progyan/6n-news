@@ -20,14 +20,14 @@
     border-radius: 0 16px 0 16px;
     display: inline-flex;
     align-items: center;
-    width: 9em;
+    width: 14em;
 }
 
 .content {
     padding: 16px;
 }
 
-p, h3 {
+p, h3, button {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -86,9 +86,17 @@ body {
     position: fixed;
     bottom: 16px;
     right: 16px;
-    height: 64px;
+    padding: 16px;
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
+    transition-property: box-shadow bottom;
+    transition-duration: 0.5s;
+    border: 0;
+}
+
+#new:hover {
+    box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
 }
 
 #username {
