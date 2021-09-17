@@ -21,8 +21,10 @@
         </p>
         <div id="main">
             <div id="text-container">
-                <textarea id="text" placeholder="Текст новости" maxlength="1600"></textarea>
+                <textarea id="text" placeholder="Текст новости (писать сюда)" maxlength="1600" oninput="textChanged()"></textarea>
             </div>
+            <br>
+            <div id="marked"></div>
             <div id="creator">
                 <p id="creator-name"></p>
                 <img id="face">
@@ -30,6 +32,7 @@
         </div>
         <button id="ok" onclick="submitNews()">Готово</button>
         <button id="back" onclick="if(confirm('Выйти? Изменения не сохранятся!')){window.location.href = '../main/index.html'}">Назад</button>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

@@ -10,7 +10,11 @@ fetch("/getuser")
         document.getElementById("c-name").innerText = lowercase_names[user];
         document.getElementById("creator-name").innerText = "-- " + user; 
         document.getElementById("face").src = "../faces/" + user + ".jpg"
-    }) });
+    }) 
+});
+
+let markedd = document.getElementById("marked")
+let unmarked = document.getElementById("text")
 
 function submitNews() {
     if(confirm("Готово?")){
@@ -33,3 +37,6 @@ function submitNews() {
     };
 }
 
+function textChanged() {
+    markedd.innerHTML = marked(unmarked.value)
+}

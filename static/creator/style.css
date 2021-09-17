@@ -4,6 +4,11 @@ p, button {
 
 textarea {
     font-family: 'Roboto Mono', monospace;
+    display: inline;
+}
+
+#marked {
+    font-family: 'Roboto', sans-serif;
 }
 
 #description {
@@ -59,12 +64,13 @@ body {
     border-radius: 16px;
     border-top: 4px solid #ddd;
     border-bottom: 4px solid #ddd;
-    padding: 16px 16px 16px 32px;
+    padding: 16px;
     overflow: hidden;
 }
 
 #text-container {
     height: 45vh;
+    width: 100%;
 }
 
 #creator {
