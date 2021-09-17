@@ -1,5 +1,9 @@
-p, textarea, button {
+p, button {
     font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+    font-family: 'Roboto Mono', monospace;
 }
 
 #description {
