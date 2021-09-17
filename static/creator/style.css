@@ -1,4 +1,4 @@
-p, button {
+p, button, a {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -102,6 +102,24 @@ body {
 }
 
 #ok:hover {
+    box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
+}
+
+#formatting {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+    transition-property: box-shadow bottom;
+    transition-duration: 0.5s;
+    border: 0;
+    background-color: white;
+}
+
+#formatting:hover {
     box-shadow: 0 0px 8px #0008;
     cursor: pointer;
 }

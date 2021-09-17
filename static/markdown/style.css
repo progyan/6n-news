@@ -1,0 +1,35 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 32px;
+}
+
+pre {
+    background-color: #eee;
+    border-radius: 8px;
+    display: block;
+    padding: 16px;
+    font-family: "Roboto Mono", monospace;
+}
+
+hr {
+    border: 1px yellowgreen dashed;
+    color: yellowgreen;
+    background-color: yellowgreen;
+    margin: 32px 0;
+}
+
+#back {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+    transition-property: box-shadow bottom;
+    transition-duration: 0.5s;
+    border: 0;
+    background-color: white;
+}
