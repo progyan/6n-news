@@ -1,8 +1,8 @@
-p, h3, pre, button {
+p, h3, pre, button, h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+body>h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 3em;
     line-height: 0em;
