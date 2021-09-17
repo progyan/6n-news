@@ -1,4 +1,5 @@
 newsList = [];
+unmark = new UnmarkRenderer();
 
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
@@ -51,7 +52,7 @@ function fillNews() {
         newsNameNode.appendChild(textNode2);
         contentNode.appendChild(newsNameNode);
         let previewTextNode = document.createElement("P");
-        let textNode3 = document.createTextNode(news[2]);
+        let textNode3 = document.createTextNode(marked(news[2], {"renderer": unmark}));
         previewTextNode.appendChild(textNode3);
         previewTextNode.className = "preview-text";
         contentNode.appendChild(previewTextNode);
