@@ -1,6 +1,8 @@
 let lowercase_names = {
     "Ю. Е. Козуб": "юлии евгеньевны козуб"
 };
+
+let images = {"Ю. Е. Козуб": "kozub"}
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
         if (user == "Ученик 6Н") {
@@ -9,7 +11,7 @@ fetch("/getuser")
         }
         document.getElementById("c-name").innerText = lowercase_names[user];
         document.getElementById("creator-name").innerText = "-- " + user; 
-        document.getElementById("face").src = "../faces/" + user + ".jpg"
+        document.getElementById("face").src = "../faces/" + images[user] + ".jpg"
     }) 
 });
 

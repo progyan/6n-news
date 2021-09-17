@@ -1,5 +1,7 @@
-newsList = [];
-unmark = new UnmarkRenderer();
+let newsList = [];
+let unmark = new UnmarkRenderer();
+
+let images = {"Ю. Е. Козуб": "kozub"}
 
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
@@ -39,7 +41,7 @@ function fillNews() {
         contentNode.className = "content";
         newsNode.appendChild(contentNode);
         let faceNode = document.createElement("IMG");
-        faceNode.src = "../faces/" + news[0] + ".jpg"
+        faceNode.src = "../faces/" + images[news[0]] + ".jpg"
         faceNode.className = "face";
         creatorNode.appendChild(faceNode);
         let creatorNameNode = document.createElement("P");
