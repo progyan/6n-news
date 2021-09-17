@@ -38,6 +38,7 @@ def delete_news(id):
     with get_connection() as con:
         cur = con.cursor()
         cur.execute('SELECT creator FROM news where id = %s;', (id,))
+        app.logger.debug(cur.fetchall())
         if session["username"] == cur.fetchall():
             cur.execute('DELETE FROM news WHERE id = %s;', (id,))
             con.commit()

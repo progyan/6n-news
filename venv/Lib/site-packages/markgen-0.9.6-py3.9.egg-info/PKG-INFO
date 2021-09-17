@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: markgen
+Version: 0.9.6
+Summary: Python library for the programmatic generation of markdown text
+Home-page: https://github.com/1stvamp/markgen.py
+Author: Wes Mason
+Author-email: wes@1stvamp.org
+License: BSD
+Description: markgen
+        =======
+        
+        .. image:: https://travis-ci.org/1stvamp/markgen.py.png?branch=master
+           :target: https://travis-ci.org/1stvamp/markgen.py
+        
+        Python library for the programmatic generation of markdown text
+        
+Platform: UNKNOWN
+Provides: markgen
