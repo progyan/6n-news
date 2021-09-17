@@ -17,7 +17,6 @@ def news_list():
         cur.execute('SELECT creator, title, content, news_type, id, creation_date FROM news;')
         #return jsonify(_news)
         ans = cur.fetchall()
-        app.logger.debug(ans[0][5])
         for i in range(len(ans)):
             ans[i] = list(ans[i])
             ans[i][5] = ans[i][5].strftime("%d.%m.%Y")
