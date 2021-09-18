@@ -76,11 +76,11 @@ body {
 
 .important {
     background-color: #fdd;
-    border-color: lightcoral;
+    border: 4px solid lightcoral;
 }
 
 .important .creator {
-    border-color: lightcoral;
+    border: 4px solid lightcoral;
 }
 
 .face {
