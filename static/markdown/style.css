@@ -15,9 +15,9 @@ pre {
 }
 
 hr {
-    border: 1px yellowgreen dashed;
-    color: yellowgreen;
-    background-color: yellowgreen;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    height: 2px;
+    border: 0;
     margin: 32px 0;
 }
 
