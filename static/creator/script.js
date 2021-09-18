@@ -23,7 +23,7 @@ function submitNews() {
         let newsType = document.getElementById("news-type").value;
         let title = document.getElementById("title").value;
         let text = document.getElementById("text").value;
-        let isImportant = document.getElementById("is_important").value;
+        let isImportant = document.getElementById("is_important").checked;
         fetch("/getuser")
             .then((resp) => { resp.text().then((user) => {        
                 let result = [user, title, text, newsType, isImportant];
