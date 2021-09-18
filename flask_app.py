@@ -27,7 +27,7 @@ def add_news():
     if request.json[1] != "" and request.json[2] != "":
         with get_connection() as con:
             cur = con.cursor()
-            cur.execute('INSERT INTO news (creator, title, content, news_type, creation_date) VALUES (%s, %s, %s, %s, %s);',
+            cur.execute('INSERT INTO news (creator, title, content, news_type, is_important, creation_date) VALUES (%s, %s, %s, %s, %s, %s);',
                     request.json + [date.today()])
             con.commit()
             #_news.append(request.json)

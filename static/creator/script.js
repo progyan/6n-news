@@ -11,7 +11,7 @@ fetch("/getuser")
         }
         document.getElementById("c-name").innerText = lowercase_names[user];
         document.getElementById("creator-name").innerText = "-- " + user; 
-        document.getElementById("face").src = "../faces/" + images[user] + ".jpg"
+        document.getElementById("face").src = "../faces/" + images[user] + ".jpg";
     }) 
 });
 
@@ -23,9 +23,10 @@ function submitNews() {
         let newsType = document.getElementById("news-type").value;
         let title = document.getElementById("title").value;
         let text = document.getElementById("text").value;
+        let isImportant = document.getElementById("is_important").value;
         fetch("/getuser")
             .then((resp) => { resp.text().then((user) => {        
-                let result = [user, title, text, newsType];
+                let result = [user, title, text, newsType, isImportant];
                 console.log(result);
                 fetch("/addnews", { 
                     'method': "post", 

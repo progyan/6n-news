@@ -32,6 +32,8 @@ function fillNews() {
     for (let news of newsList) {
         let newsNode = document.createElement("DIV");
         newsNode.className = "news";
+        if(news[5])
+            newsNode.className += " important";
         newsNode.addEventListener("click", onNewsClick);
         mainNode.appendChild(newsNode);
         let creatorNode = document.createElement("DIV");
@@ -45,7 +47,7 @@ function fillNews() {
         faceNode.className = "face";
         creatorNode.appendChild(faceNode);
         let creatorNameNode = document.createElement("P");
-        let textNode = document.createTextNode(news[0] + ", " + news[5]);
+        let textNode = document.createTextNode(news[0] + ", " + news[6]);
         creatorNameNode.appendChild(textNode);
         creatorNameNode.className = "creator-name";
         creatorNode.appendChild(creatorNameNode);
