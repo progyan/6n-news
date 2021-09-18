@@ -47,13 +47,13 @@ def delete_news(id):
 
 @app.post("/login")
 def login():
-    if request.json[0] == "Ю. Е. Козуб" and request.json[1] == "k":
-        session['username'] = request.json[0]
-        return jsonify("OK")
-    elif request.json[0] == "Ученик 6Н":
-        session['username'] = request.json[0]
-        return jsonify("OK")
-    return jsonify("FAIL")
+    with get_connection() as con:
+        cur = con.cursor()
+        cur.execute('SELECT creator FROM news WHERE username = %s AND password = %s;', request.json)
+        if len(cur.fetchall()[0]):
+            session['username'] = request.json[0]
+            return jsonify("OK")
+        return jsonify("FAIL")
 
 @app.post("/logout")
 def logout():
