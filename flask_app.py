@@ -14,7 +14,7 @@ CORS(app)
 def news_list():
     with get_connection() as con:
         cur = con.cursor()
-        cur.execute('SELECT creator, title, content, news_type, id, creation_date FROM news;')
+        cur.execute('SELECT creator, title, content, news_type, id, is_important, creation_date FROM news;')
         #return jsonify(_news)
         ans = cur.fetchall()
         for i in range(len(ans)):
