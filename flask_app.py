@@ -49,7 +49,7 @@ def delete_news(id):
 def login():
     with get_connection() as con:
         cur = con.cursor()
-        cur.execute('SELECT creator FROM news WHERE username = %s AND password = %s;', request.json)
+        cur.execute('SELECT id FROM users WHERE username = %s AND password = %s;', request.json)
         if len(cur.fetchall()[0]):
             session['username'] = request.json[0]
             return jsonify("OK")
