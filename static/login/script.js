@@ -32,7 +32,6 @@ function submitLogin() {
         console.log(resp) 
         resp.json().then((t) => {
             if(t == "OK") {
-                alert("Добро пожаловать.");
                 window.location.href = '../main/index.html';
             } else {
                 alert("Неправильный логин/пароль.");
