@@ -6,6 +6,14 @@ let images = {"Ю. Е. Козуб": "kozub"}
 
 let news = JSON.parse(localStorage.getItem("currentNews"));
 
+fetch("/getuser")
+    .then((resp) => { resp.text().then((user) => { 
+        if (user != "Ю. Е. Козуб") {
+            document.getElementById("delete").style.display = "none";
+        }
+    }) 
+});
+
 document.getElementById("title").innerText = news[1].toUpperCase();
 document.getElementById("description").innerText = news[3] + " новость от " + lowercase_names[news[0]] + ", " + news[6];
 document.getElementById("text").innerHTML = marked(news[2]);
