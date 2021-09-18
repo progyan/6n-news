@@ -74,6 +74,15 @@ body {
     background-attachment: fixed;
 }
 
+.important {
+    background-color: #fdd;
+    border-color: lightcoral;
+}
+
+.important .creator {
+    border-color: lightcoral;
+}
+
 .face {
     height: 48px;
     display: inline;
