@@ -19,7 +19,7 @@ def news_list():
         ans = cur.fetchall()
         for i in range(len(ans)):
             ans[i] = list(ans[i])
-            ans[i][5] = ans[i][5].strftime("%d.%m.%Y")
+            ans[i][6] = ans[i][6].strftime("%d.%m.%Y")
         return jsonify(ans)
 
 @app.post("/addnews")
