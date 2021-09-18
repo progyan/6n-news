@@ -47,7 +47,7 @@ def delete_news(id):
 
 @app.post("/login")
 def login():
-    if request.json[0] == "Ю. Е. Козуб" and request.json[1] == "k":
+    if request.json[0] == "Ю. Е. Козуб" and request.json[1] == os.environ["TEACHER_PASSWORD"]:
         session['username'] = request.json[0]
         return jsonify("OK")
     elif request.json[0] == "Ученик 6Н":
