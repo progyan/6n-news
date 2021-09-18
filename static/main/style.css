@@ -80,7 +80,8 @@ body {
 }
 
 .important .creator {
-    border: 4px solid lightcoral;
+    border-bottom: 4px solid lightcoral;
+    border-left: 4px solid lightcoral;
 }
 
 .face {
