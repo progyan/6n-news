@@ -38,20 +38,26 @@ body {
 }
 
 #back {
-    position: fixed;
+    float: left;
     bottom: 16px;
     left: 16px;
     padding: 16px;
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
-    transition-property: box-shadow bottom;
-    transition-duration: 0.5s;
+    transition-property: box-shadow bottom background-color;
+    transition-duration: 0.4s;
     background-color: white;
     border: 0;
 }
 
 #back:hover {
     box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
+}
+
+#back:active {
+    background-color: #eee;
+    box-shadow: 0 0px 3px #0008;
     cursor: pointer;
 }
 
@@ -66,6 +72,7 @@ body {
     border-bottom: 4px solid #ddd;
     padding: 16px;
     overflow: hidden;
+    margin-bottom: 16px;
 }
 
 #text-container {
@@ -89,14 +96,14 @@ body {
 }
 
 #ok {
-    position: fixed;
+    float: right;
     bottom: 16px;
     right: 16px;
     padding: 16px;
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
-    transition-property: box-shadow bottom;
-    transition-duration: 0.5s;
+    transition-property: box-shadow bottom background-color;
+    transition-duration: 0.4s;
     border: 0;
     background-color: white;
 }
@@ -106,21 +113,35 @@ body {
     cursor: pointer;
 }
 
+#ok:active {
+    background-color: #eee;
+    box-shadow: 0 0px 3px #0008;
+    cursor: pointer;
+}
+
 #formatting {
-    position: fixed;
+    margin-left: 16px;
+    float: left;
     top: 16px;
     right: 16px;
     padding: 16px;
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
     transition-property: box-shadow bottom;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
     border: 0;
     background-color: white;
+    margin-bottom: 16px;
 }
 
 #formatting:hover {
     box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
+}
+
+#formatting:active {
+    background-color: #eee;
+    box-shadow: 0 0px 3px #0008;
     cursor: pointer;
 }
 

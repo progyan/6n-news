@@ -29,7 +29,18 @@ hr {
     box-shadow: 0 2px 16px #0008;
     border-radius: 64px;
     transition-property: box-shadow bottom;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
     border: 0;
     background-color: white;
+}
+
+#back:hover {
+    box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
+}
+
+#back:active {
+    background-color: #eee;
+    box-shadow: 0 0px 3px #0008;
+    cursor: pointer;
 }
