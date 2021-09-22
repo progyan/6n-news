@@ -9,8 +9,18 @@ from datetime import date
 
 from werkzeug.utils import environ_property
 
+def check_env(app):
+    if not os.environ.get("WEB_PUSH_KEY"):
+        app.logger.error("ERROR: WEB_PUSH_KEY is not set")
+        exit(-1)
+    if not os.environ.get("SESSION_KEY"):
+        app.logger.error("ERROR: SESSION_KEY is not set")
+        exit(-1)
+
+
 app = Flask(__name__)
-app.secret_key = "1234567890лормс"#os.environ["SESSION_KEY"].encode()
+check_env(app)
+app.secret_key = os.environ["SESSION_KEY"].encode()
 CORS(app)
 
 @app.route("/news")
