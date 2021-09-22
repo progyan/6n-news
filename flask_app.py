@@ -1,3 +1,4 @@
+from pywebpush import webpush
 from flask import Flask, request, session, jsonify, send_from_directory, redirect
 from flask.templating import render_template
 from markupsafe import escape
@@ -5,6 +6,8 @@ from flask_cors import CORS
 import psycopg2
 import os
 from datetime import date
+
+from werkzeug.utils import environ_property
 
 app = Flask(__name__)
 app.secret_key = "1234567890лормс"#os.environ["SESSION_KEY"].encode()
@@ -30,7 +33,22 @@ def add_news():
             cur.execute('INSERT INTO news (creator, title, content, news_type, is_important, creation_date) VALUES (%s, %s, %s, %s, %s, %s);',
                     request.json + [date.today()])
             con.commit()
-            #_news.append(request.json)
+            # TODO: make async
+            cur.execute('SELECT endpoint, p256dh, auth FROM subscriptions;')
+            #app.logger.debug(cur.fetchall())
+            for sub in cur.fetchall():
+                webpush(
+                    subscription_info={
+                        "endpoint": sub[0],
+                        "keys": {
+                            "p256dh": sub[1],
+                            "auth": sub[2]
+                        }
+                    },
+                    data=("6Н: " + request.json[0] + " написал(а) новость \"" + request.json[1] + "\""),
+                    vapid_private_key=os.environ["WEB_PUSH_KEY"],
+                    vapid_claims={"sub": "mailto:yancolabs@gmail.com"}
+                )
             return jsonify("OK")
 
 @app.route("/deletenews/<int:id>")
@@ -72,6 +90,14 @@ def pages(path):
 @app.route("/")
 def main_page():
     return redirect("/pages/login/index.html")
+
+@app.post("/subscribe")
+def subscribe():
+    with get_connection() as con:
+        cur = con.cursor()
+        app.logger.debug(request.json)
+        cur.execute('INSERT INTO subscriptions (endpoint, p256dh, auth) VALUES (%s, %s, %s);', (request.json["endpoint"], request.json["keys"]["p256dh"], request.json["keys"]["auth"]))
+        return jsonify({"data": {"success": True}})
 
 def get_connection():
     if os.environ.get("ENV") == 'prod':
