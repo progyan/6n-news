@@ -19,11 +19,19 @@ let markedd = document.getElementById("marked")
 let unmarked = document.getElementById("text")
 
 function submitNews() {
+    let newsType = document.getElementById("news-type").value;
+    let title = document.getElementById("title").value;
+    let text = document.getElementById("text").value;
+    let isImportant = document.getElementById("is_important").checked;
+    if(text == ""){
+        alert("Вы забыли написать текст новости!");
+        return;
+    }
+    if(title == ""){
+        alert("Вы забыли написать название!");
+        return;
+    }
     if(confirm("Готово?")){
-        let newsType = document.getElementById("news-type").value;
-        let title = document.getElementById("title").value;
-        let text = document.getElementById("text").value;
-        let isImportant = document.getElementById("is_important").checked;
         fetch("/getuser")
             .then((resp) => { resp.text().then((user) => {        
                 let result = [user, title, text, newsType, isImportant];
