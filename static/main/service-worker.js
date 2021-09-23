@@ -1,6 +1,4 @@
 self.addEventListener('push', function(event) {
-    let url = 'https://news-6n.herokuapp.com';
-
     let options = {
         vibrate: [500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]
     };
@@ -11,7 +9,7 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-    let url = 'https://fonts.google.com';
+    let url = 'https://news-6n.herokuapp.com';
     event.notification.close(); // Android needs explicit close.
     event.waitUntil(
         clients.matchAll({type: 'window'}).then( windowClients => {
