@@ -2,12 +2,6 @@ self.addEventListener('push', function(event) {
     let url = 'https://news-6n.herokuapp.com';
 
     let options = {
-        actions: [
-            {
-                action: 'action',
-                title: 'Посмотеть',
-            }
-        ],
         vibrate: [500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]
     };
 
