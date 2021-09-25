@@ -1,5 +1,6 @@
-p, h3, pre, button, h1 {
+p, h3, pre, button, h1, div {
     font-family: 'Roboto', sans-serif;
+    overflow-wrap: break-word;
 }
 
 body>h1 {
