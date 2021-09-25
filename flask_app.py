@@ -92,7 +92,7 @@ def logout():
 @app.route("/getuser")
 def getuser():
     app.logger.debug(session)
-    return session.get('username', 'Гость')
+    return session.get('username', '')
 
 @app.route('/pages/<path:path>')
 def pages(path):
@@ -100,7 +100,7 @@ def pages(path):
 
 @app.route("/")
 def main_page():
-    return redirect("/pages/login/index.html")
+    return redirect("/pages/main/index.html")
 
 @app.post("/subscribe")
 def subscribe():

@@ -5,10 +5,13 @@ let images = {"Ю. Е. Козуб": "kozub"}
 
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
+        if (user == "")
+            document.getElementById("logout").innerText = "Войти";
+        else
+            document.getElementById("un-span").innerText = user + ".";
         document.getElementById("un-span").innerText = user + ".";
-        if (user != "Ю. Е. Козуб") {
+        if (user != "Ю. Е. Козуб") 
             document.getElementById("new").style.display = "none";
-        }
     }) 
 });
 
