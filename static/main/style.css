@@ -12,6 +12,11 @@
     background-color: #ddd;
 }
 
+h3 {
+    text-overflow: ellipsis; 
+    overflow: hidden;
+}
+
 .creator {
     float: right;
     border-bottom: 4px solid #ddd;
@@ -34,7 +39,7 @@ p, h3, button {
 h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 3em;
-    line-height: 0em;
+    margin: 0;
     text-align: center;
 }
 
@@ -58,6 +63,7 @@ h1 {
     font-size: smaller; /*0.8em*/
     text-align: center;
     margin-bottom: 24px;
+    margin-top: 0;
     letter-spacing: 0.4em;
 }
 
@@ -127,6 +133,7 @@ body {
     padding: 16px;
     border-bottom-left-radius: 16px;
     margin: 0;
+    background-color: #fff;
 }
 
 #subscribe {
@@ -178,4 +185,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #b0b0b0;
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+    .creator-name {
+        display: none;
+    }
+
+    .creator {
+        width: 48px;
+    }
 }
