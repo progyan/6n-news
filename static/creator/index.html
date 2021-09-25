@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <input type="text" id="title" style="text-transform:uppercase" placeholder="(НАЗВАНИЕ НОВОСТИ)" maxlength="30">
+        <input type="text" id="title" style="text-transform:uppercase" placeholder="(НАЗВАНИЕ НОВОСТИ)" maxlength="100">
         <p id="description">
             <select id="news-type">
                 <option>обычная</option>
@@ -22,7 +22,7 @@
         </p>
         <div id="main">
             <div id="text-container">
-                <textarea id="text" placeholder="Текст новости (писать сюда)" maxlength="1600" oninput="textChanged()"></textarea>
+                <textarea id="text" placeholder="Текст новости (писать сюда)" maxlength="8100" oninput="textChanged()"></textarea>
             </div>
             <input type="checkbox" id="is_important">
             <label for="is_important"><strong>Очень</strong> важно</label>
