@@ -40,26 +40,29 @@ def add_news():
     if request.json[1] != "" and request.json[2] != "":
         with get_connection() as con:
             cur = con.cursor()
-            cur.execute('INSERT INTO news (creator, title, content, news_type, is_important, creation_date) VALUES (%s, %s, %s, %s, %s, %s);',
-                    request.json + [date.today()])
-            con.commit()
-            # TODO: make async
-            cur.execute('SELECT endpoint, p256dh, auth FROM subscriptions;')
-            #app.logger.debug(cur.fetchall())
-            for sub in cur.fetchall():
-                webpush(
-                    subscription_info={
-                        "endpoint": sub[0],
-                        "keys": {
-                            "p256dh": sub[1],
-                            "auth": sub[2]
-                        }
-                    },
-                    data=("6Н: " + request.json[0] + " написал(а) новость \"" + request.json[1] + "\""),
-                    vapid_private_key=os.environ["WEB_PUSH_KEY"],
-                    vapid_claims={"sub": "mailto:yancolabs@gmail.com"}
-                )
-            return jsonify("OK")
+            if session["username"] == "Ю. Е. Козуб":
+                cur.execute('INSERT INTO news (creator, title, content, news_type, is_important, creation_date) VALUES (%s, %s, %s, %s, %s, %s);',
+                        request.json + [date.today()])
+                con.commit()
+                # TODO: make async
+                cur.execute('SELECT endpoint, p256dh, auth FROM subscriptions;')
+                #app.logger.debug(cur.fetchall())
+                for sub in cur.fetchall():
+                    webpush(
+                        subscription_info={
+                            "endpoint": sub[0],
+                            "keys": {
+                                "p256dh": sub[1],
+                                "auth": sub[2]
+                            }
+                        },
+                        data=("6Н: " + request.json[0] + " написал(а) новость \"" + request.json[1] + "\""),
+                        vapid_private_key=os.environ["WEB_PUSH_KEY"],
+                        vapid_claims={"sub": "mailto:yancolabs@gmail.com"}
+                    )
+                return jsonify("OK")
+            else:
+                return jsonify("NO RIGHTS")
 
 @app.route("/deletenews/<int:id>")
 def delete_news(id):
@@ -83,6 +86,36 @@ def login():
             session['username'] = request.json[0]
             return jsonify("OK")
         return jsonify("FAIL")
+
+@app.post("/updatenews/<int:id>")
+def update_news():
+    if request.json[1] != "" and request.json[2] != "":
+        with get_connection() as con:
+            cur = con.cursor()
+            cur.execute('SELECT creator FROM news where id = %s;', (id,))
+            if session["username"] == cur.fetchall()[0][0]:
+                cur.execute('UPDATE news SET creator = %s, title = %s, content = %s, news_type = %s, is_important = %s, creation_date = %s WHERE id = %s;',
+                        request.json + [date.today(), id])
+                con.commit()
+                # TODO: make async
+                cur.execute('SELECT endpoint, p256dh, auth FROM subscriptions;')
+                #app.logger.debug(cur.fetchall())
+                for sub in cur.fetchall():
+                    webpush(
+                        subscription_info={
+                            "endpoint": sub[0],
+                            "keys": {
+                                "p256dh": sub[1],
+                                "auth": sub[2]
+                            }
+                        },
+                        data=("6Н: " + request.json[0] + " изменил(а) новость \"" + request.json[1] + "\""),
+                        vapid_private_key=os.environ["WEB_PUSH_KEY"],
+                        vapid_claims={"sub": "mailto:yancolabs@gmail.com"}
+                    )
+                return jsonify("OK")
+            else:
+                return jsonify("NO RIGHTS")
 
 @app.post("/logout")
 def logout():
