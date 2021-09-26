@@ -9,7 +9,6 @@ fetch("/getuser")
             document.getElementById("logout").innerText = "Войти";
         else
             document.getElementById("un-span").innerText = user + ".";
-        document.getElementById("un-span").innerText = user + ".";
         if (user != "Ю. Е. Козуб") 
             document.getElementById("new").style.display = "none";
     }) 
