@@ -60,7 +60,13 @@ function submitNews() {
                 }) 
             });
         } else {
-            fetch("/updatenews/" + news[4], {"mode": "no-cors"}).then((resp) => {
+            fetch("/updatenews/" + news[4], { 
+                'method': "post", 
+                'headers': {
+                    'Content-Type': 'application/json'
+                },      
+                'body': JSON.stringify([news[0], news[1], news[2], news[3], news[5]])
+            }).then((resp) => {
                 resp.json().then((code) => {
                     if (code == "NO RIGHTS") {
                         alert("Это не ваша новость. Вы не можете изменять чужие новости.");
