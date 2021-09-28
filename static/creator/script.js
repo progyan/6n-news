@@ -2,13 +2,17 @@ let lowercase_names = {
     "Ю. Е. Козуб": "юлии евгеньевны козуб"
 };
 
+let rewriting = false;
+let news;
+
 if (localStorage.getItem("rewritingNews")) {
-    let data = JSON.parse(localStorage.getItem("rewritingNews"));
-    document.getElementById("news-type").value = data[3];
-    document.getElementById("title").value = data[1];
-    document.getElementById("text").value = data[2];
-    document.getElementById("is_important").checked = data[4];
+    news = JSON.parse(localStorage.getItem("rewritingNews"));
+    document.getElementById("news-type").value = news[3];
+    document.getElementById("title").value = news[1];
+    document.getElementById("text").value = news[2];
+    document.getElementById("is_important").checked = news[4];
     localStorage.setItem("rewritingNews", null);
+    rewriting = true;
 }
 
 let images = {"Ю. Е. Козуб": "kozub"}
@@ -41,19 +45,31 @@ function submitNews() {
         return;
     }
     if(confirm("Готово?")){
-        fetch("/getuser")
-            .then((resp) => { resp.text().then((user) => {        
-                let result = [user, title, text, newsType, isImportant];
-                console.log(result);
-                fetch("/addnews", { 
-                    'method': "post", 
-                    'headers': {
-                        'Content-Type': 'application/json'
-                    },      
-                    'body': JSON.stringify(result)
-                }).then((resp) => { window.location.href = '../main/index.html'} );
-            }) 
-        });
+        if(rewriting){
+            fetch("/getuser")
+                .then((resp) => { resp.text().then((user) => {        
+                    let result = [user, title, text, newsType, isImportant];
+                    console.log(result);
+                    fetch("/addnews", { 
+                        'method': "post", 
+                        'headers': {
+                            'Content-Type': 'application/json'
+                        },      
+                        'body': JSON.stringify(result)
+                    }).then((resp) => { window.location.href = '../main/index.html'} );
+                }) 
+            });
+        } else {
+            fetch("/updatenews/" + news[4], {"mode": "no-cors"}).then((resp) => {
+                resp.json().then((code) => {
+                    if (code == "NO RIGHTS") {
+                        alert("Это не ваша новость. Вы не можете изменять чужие новости.");
+                    } else {
+                        window.location.href = '../main/index.html';
+                    }
+                });
+            });
+        }
     };
 }
 
