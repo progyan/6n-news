@@ -70,6 +70,30 @@ body {
     cursor: pointer;
 }
 
+#rewrite {
+    bottom: 16px;
+    right: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 16px #0008;
+    border-radius: 64px;
+    transition-property: box-shadow bottom background-color;
+    transition-duration: 0.4s;
+    border: 0;
+    background-color: white;
+    margin-right: 16px;
+}
+
+#rewrite:hover {
+    box-shadow: 0 0px 8px #0008;
+    cursor: pointer;
+}
+
+#rewrite:active {
+    background-color: #eee;
+    box-shadow: 0 0px 3px #0008;
+    cursor: pointer;
+}
+
 #back {
     bottom: 16px;
     left: 16px;

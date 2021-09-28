@@ -2,6 +2,15 @@ let lowercase_names = {
     "Ю. Е. Козуб": "юлии евгеньевны козуб"
 };
 
+if (localStorage.getItem("rewritingNews")) {
+    let data = JSON.parse(localStorage.getItem("rewritingNews"));
+    document.getElementById("news-type").value = data[3];
+    document.getElementById("title").value = data[1];
+    document.getElementById("text").value = data[2];
+    document.getElementById("is_important").checked = data[4];
+    localStorage.setItem("rewritingNews", null);
+}
+
 let images = {"Ю. Е. Козуб": "kozub"}
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
