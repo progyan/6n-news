@@ -12,7 +12,7 @@ let news = JSON.parse(localStorage.getItem("currentNews"));
 
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
-        if (user != "Ю. Е. Козуб") {
+        if (user != news[0]) {
             document.getElementById("delete").style.display = "none";
             document.getElementById("rewrite").style.display = "none";
         }
