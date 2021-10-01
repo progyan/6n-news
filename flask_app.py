@@ -40,7 +40,7 @@ def add_news():
     if request.json[1] != "" and request.json[2] != "":
         with get_connection() as con:
             cur = con.cursor()
-            if session["username"] == "Ю. Е. Козуб":
+            if session["username"] == "Ю. Е. Козуб" or session["username"] == "Ян Бобрус":
                 cur.execute('INSERT INTO news (creator, title, content, news_type, is_important, creation_date) VALUES (%s, %s, %s, %s, %s, %s);',
                         request.json + [date.today()])
                 con.commit()
