@@ -1,8 +1,12 @@
 let lowercase_names = {
-    "Ю. Е. Козуб": "юлии евгеньевны"
+    "Ю. Е. Козуб": "юлии евгеньевны",
+    "Ян Бобрус": "яна бобруса"
 };
 
-let images = {"Ю. Е. Козуб": "kozub"}
+let images = {
+    "Ю. Е. Козуб": "kozub",
+    "Ян Бобрус": "yanb"
+}
 
 let news = JSON.parse(localStorage.getItem("currentNews"));
 

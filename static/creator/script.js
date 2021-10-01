@@ -1,5 +1,6 @@
 let lowercase_names = {
-    "Ю. Е. Козуб": "юлии евгеньевны козуб"
+    "Ю. Е. Козуб": "юлии евгеньевны козуб",
+    "Ян Бобрус": "яна бобруса"
 };
 
 let rewriting = false;
@@ -15,7 +16,11 @@ if (localStorage.getItem("rewritingNews")) {
     rewriting = true;
 }
 
-let images = {"Ю. Е. Козуб": "kozub"}
+let images = {
+    "Ю. Е. Козуб": "kozub",
+    "Ян Бобрус": "yanb"
+}
+
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
         if (user == "Ученик 6Н") {

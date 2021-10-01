@@ -1,7 +1,10 @@
 let newsList = [];
 let unmark = new UnmarkRenderer();
 
-let images = {"Ю. Е. Козуб": "kozub"}
+let images = {
+    "Ю. Е. Козуб": "kozub",
+    "Ян Бобрус": "yanb"
+}
 
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
@@ -9,7 +12,7 @@ fetch("/getuser")
             document.getElementById("logout").innerText = "Войти";
         else
             document.getElementById("un-span").innerText = user + ".";
-        if (user != "Ю. Е. Козуб") 
+        if (user != "Ю. Е. Козуб" && user != "Ян Бобрус") 
             document.getElementById("new").style.display = "none";
     }) 
 });

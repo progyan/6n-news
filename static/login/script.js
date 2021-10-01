@@ -9,7 +9,7 @@ function toggleVisibility() {
 
 function loginChanged() {
     let login = document.getElementById("login").value;
-    if (login == "Ю. Е. Козуб") {
+    if (login == "Ю. Е. Козуб" || login == "Ян Бобрус") {
         document.getElementById("getpass").style.display = "block";
     } else {
         document.getElementById("getpass").style.display = "none";
