@@ -88,7 +88,7 @@ def login():
         return jsonify("FAIL")
 
 @app.post("/updatenews/<int:id>")
-def update_news():
+def update_news(id):
     if request.json[1] != "" and request.json[2] != "":
         with get_connection() as con:
             cur = con.cursor()
