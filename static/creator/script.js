@@ -12,7 +12,7 @@ if (localStorage.getItem("rewritingNews")) {
     document.getElementById("title").value = news[1];
     document.getElementById("text").value = news[2];
     document.getElementById("is_important").checked = news[4];
-    localStorage.setItem("rewritingNews", null);
+    localStorage.setItem("rewritingNews", "");
     rewriting = true;
 }
 
@@ -50,7 +50,7 @@ function submitNews() {
         return;
     }
     if(confirm("Готово?")){
-        if(rewriting){
+        if(!rewriting){
             fetch("/getuser")
                 .then((resp) => { resp.text().then((user) => {        
                     let result = [user, title, text, newsType, isImportant];
