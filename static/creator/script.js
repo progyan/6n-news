@@ -25,7 +25,7 @@ fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
         if (user == "Ученик 6Н") {
             alert("Ученики не могут добавлять новости.");
-            window.location.href = 'https://news-6n.herokuapp.com/main/index.html';
+            window.location.href = '../main/index.html';
         }
         document.getElementById("c-name").innerText = lowercase_names[user];
         document.getElementById("creator-name").innerText = "-- " + user; 
@@ -61,7 +61,7 @@ function submitNews() {
                             'Content-Type': 'application/json'
                         },      
                         'body': JSON.stringify(result)
-                    }).then((resp) => { window.location.href = 'https://news-6n.herokuapp.com/main/index.html'} );
+                    }).then((resp) => { window.location.href = '../main/index.html'} );
                 }) 
             });
         } else {
@@ -76,7 +76,7 @@ function submitNews() {
                     if (code == "NO RIGHTS") {
                         alert("Это не ваша новость. Вы не можете изменять чужие новости.");
                     } else {
-                        window.location.href = 'https://news-6n.herokuapp.com/main/index.html';
+                        window.location.href = '../main/index.html';
                     }
                 });
             });
