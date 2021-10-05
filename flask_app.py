@@ -133,7 +133,7 @@ def pages(path):
 
 @app.route("/")
 def main_page():
-    return redirect("/pages/main/index.html")
+    return redirect("https://news-6n.herokuapp.com/pages/main/index.html")
 
 @app.post("/subscribe")
 def subscribe():
