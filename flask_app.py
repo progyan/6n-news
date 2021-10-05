@@ -152,4 +152,5 @@ def get_connection():
     return psycopg2.connect(database='6n', user='postgres', password='postgres', 
             host='localhost', port=5432)
 
-app.run(ssl_context='adhoc')
+if __name__ == '__main__':
+    app.run(ssl_context='adhoc')
