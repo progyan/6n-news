@@ -9,6 +9,15 @@ from datetime import date
 
 from werkzeug.utils import environ_property
 
+class SimpleMiddleWare(object):
+    def __init__(self, app):
+        self.app = app
+
+    def __call__(self, environ, start_response):
+        if environ["SERVER_PORT"] == 8000:
+            start_response('301 Moved Permanently', [('Location','http://google.com')])
+        return self.app(environ, start_response)
+
 def check_env(app):
     if not os.environ.get("WEB_PUSH_KEY"):
         app.logger.error("ERROR: WEB_PUSH_KEY is not set")
@@ -19,6 +28,7 @@ def check_env(app):
 
 
 app = Flask(__name__)
+app.wsgi_app = SimpleMiddleWare(app.wsgi_app)
 check_env(app)
 app.secret_key = os.environ["SESSION_KEY"].encode()
 CORS(app)
@@ -152,5 +162,5 @@ def get_connection():
     return psycopg2.connect(database='6n', user='postgres', password='postgres', 
             host='localhost', port=5432)
 
-if __name__ == '__main__':
-    app.run(ssl_context='adhoc')
+#if __name__ == '__main__':
+#    app.run(ssl_context='adhoc')
