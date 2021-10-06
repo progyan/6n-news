@@ -9,14 +9,14 @@ from datetime import date
 
 from werkzeug.utils import environ_property
 
-class SimpleMiddleWare(object):
-    def __init__(self, app):
-        self.app = app
-
-    def __call__(self, environ, start_response):
-        if environ["SERVER_PORT"] == 8000:
-            start_response('301 Moved Permanently', [('Location','http://google.com')])
-        return self.app(environ, start_response)
+#class SimpleMiddleWare(object):
+#    def __init__(self, app):
+#        self.app = app
+#
+#    def __call__(self, environ, start_response):
+ #       if environ["SERVER_PORT"] == 8000:
+  #          start_response('301 Moved Permanently', [('Location','http://google.com')])
+   #     return self.app(environ, start_response)
 
 def check_env(app):
     if not os.environ.get("WEB_PUSH_KEY"):
@@ -28,7 +28,7 @@ def check_env(app):
 
 
 app = Flask(__name__)
-app.wsgi_app = SimpleMiddleWare(app.wsgi_app)
+#app.wsgi_app = SimpleMiddleWare(app.wsgi_app)
 check_env(app)
 app.secret_key = os.environ["SESSION_KEY"].encode()
 CORS(app)
@@ -143,7 +143,7 @@ def pages(path):
 
 @app.route("/")
 def main_page():
-    return redirect("/pages/main/index.html")
+    return redirect("https://news-6n.herokuapp.com/pages/main/index.html")
 
 @app.post("/subscribe")
 def subscribe():

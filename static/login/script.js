@@ -32,7 +32,7 @@ function submitLogin() {
         console.log(resp) 
         resp.json().then((t) => {
             if(t == "OK") {
-                window.location.href = '../main/index.html';
+                window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html';
             } else {
                 alert("Неправильный логин/пароль.");
             }

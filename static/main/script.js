@@ -28,7 +28,7 @@ then((resp) => {
 
 function logout() {
     fetch("/logout");
-    window.location.href = '../login/index.html';
+    window.location.href = 'https://news-6n.herokuapp.com/pages/login/index.html';
 }
 
 function fillNews() {
@@ -70,7 +70,7 @@ function fillNews() {
 
 function onNewsClick() {
     localStorage.setItem("currentNews", JSON.stringify(newsList[whichChild(this)])); 
-    window.location.href = '../news/index.html';
+    window.location.href = 'https://news-6n.herokuapp.com/pages/news/index.html';
 }
 
 function whichChild(elem){
