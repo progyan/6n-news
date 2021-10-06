@@ -32,7 +32,7 @@ function deleteNews() {
                 if (code == "NO RIGHTS") {
                     alert("Это не ваша новость. Вы не можете удалять чужие новости.");
                 } else {
-                    window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html';
+                    window.location.href = '../main/index.html';
                 }
             });
         });
@@ -42,6 +42,6 @@ function deleteNews() {
 function rewriteNews() {
     if(confirm("Изменить эту новость?")){
         localStorage.setItem("rewritingNews", localStorage.getItem("currentNews"));
-        window.location.href = 'https://news-6n.herokuapp.com/pages/creator/index.html';
+        window.location.href = '../creator/index.html';
     }
 }
