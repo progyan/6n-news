@@ -24,7 +24,7 @@ let images = {
 fetch("/getuser")
     .then((resp) => { resp.text().then((user) => { 
         if (user == "Ученик 6Н") {
-            alert("Ученики не могут добавлять новости.");
+            alert("Только админы и учителя могут добавлять новости.");
             window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html';
         }
         document.getElementById("c-name").innerText = lowercase_names[user];
@@ -35,6 +35,17 @@ fetch("/getuser")
 
 let markedd = document.getElementById("marked")
 let unmarked = document.getElementById("text")
+
+function goBack() {
+    if(confirm('Выйти?')){
+        let newsType = document.getElementById("news-type").value;
+        let title = document.getElementById("title").value;
+        let text = document.getElementById("text").value;
+        let isImportant = document.getElementById("is_important").checked;
+        localStorage.setItem("rewritingNews", JSON.stringify([user, title, text, newsType, isImportant]))
+        window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html'
+    }
+}
 
 function submitNews() {
     let newsType = document.getElementById("news-type").value;
