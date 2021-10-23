@@ -42,7 +42,7 @@ function goBack() {
         let title = document.getElementById("title").value;
         let text = document.getElementById("text").value;
         let isImportant = document.getElementById("is_important").checked;
-        localStorage.setItem("rewritingNews", JSON.stringify([user, title, text, newsType, isImportant]))
+        localStorage.setItem("rewritingNews", JSON.stringify([0, title, text, newsType, isImportant]))
         window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html'
     }
 }
