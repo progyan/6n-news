@@ -41,6 +41,8 @@ h1 {
     font-size: 3em;
     margin: 0;
     text-align: center;
+    color: white;
+    text-shadow: #00000088 0 3px 7px;
 }
 
 .creator-name {
@@ -59,7 +61,8 @@ h1 {
 }
 
 #description {
-    color: #828486;
+    color: #ffffff88;
+    text-shadow: #00000088 0 2px 5px;
     font-size: smaller; /*0.8em*/
     text-align: center;
     margin-bottom: 24px;
@@ -73,6 +76,7 @@ h3 {
 
 body {
     padding: 16px;
+    background-color: #0D3F67;
     background-image: url(../icons/lonely.jpg);
     background-size: 100vw;
     background-repeat: no-repeat;
