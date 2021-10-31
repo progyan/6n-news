@@ -156,3 +156,15 @@ body {
     width: 100%;
     margin-bottom: 8px;
 }
+
+a:link {
+    color: #1EE3CF;
+}
+  
+a:visited {
+    color: #6B48FF;
+}
+  
+a:hover {
+    color: #ff4848;
+}
