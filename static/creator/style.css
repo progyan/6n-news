@@ -12,7 +12,7 @@ textarea {
 }
 
 #description {
-    color: gray;
+    color: #828486;
     font-size: smaller; /*0.8em*/
     text-align: center;
     margin-bottom: 24px;
@@ -20,7 +20,7 @@ textarea {
 }
 
 #news-type {
-    color: gray;
+    color: #828486;
     font-size: smaller; /*0.8em*/
     letter-spacing: 0.4em;
 }
@@ -42,34 +42,34 @@ body {
     bottom: 16px;
     left: 16px;
     padding: 16px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 64px;
     transition-property: box-shadow bottom background-color;
     transition-duration: 0.4s;
-    background-color: white;
+    background-color: #f2f4f6;
     border: 0;
 }
 
 #back:hover {
-    box-shadow: 0 0px 8px #0008;
+    box-shadow: 0 0px 8px #02040688;
     cursor: pointer;
 }
 
 #back:active {
-    background-color: #eee;
-    box-shadow: 0 0px 3px #0008;
+    background-color: #e2e4e6;
+    box-shadow: 0 0px 3px #02040688;
     cursor: pointer;
 }
 
 ::placeholder {
-    color: lightgrey;
+    color: #C2C4C6;
 }
 
 #main {
-    box-shadow: 0 2px 16px #0004;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 16px;
-    border-top: 4px solid #ddd;
-    border-bottom: 4px solid #ddd;
+    border-top: 4px solid #D2D4D6;
+    border-bottom: 4px solid #D2D4D6;
     padding: 16px;
     overflow: hidden;
     margin-bottom: 16px;
@@ -92,7 +92,7 @@ body {
     display: inline;
     border-radius: 48px;
     margin-left: 16px;
-    box-shadow: 0 2px 16px #0004;
+    box-shadow: 0 2px 16px #02040688;
 }
 
 #ok {
@@ -100,22 +100,22 @@ body {
     bottom: 16px;
     right: 16px;
     padding: 16px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 64px;
     transition-property: box-shadow bottom background-color;
     transition-duration: 0.4s;
     border: 0;
-    background-color: white;
+    background-color: #f2f4f6;
 }
 
 #ok:hover {
-    box-shadow: 0 0px 8px #0008;
+    box-shadow: 0 0px 8px #02040688;
     cursor: pointer;
 }
 
 #ok:active {
-    background-color: #eee;
-    box-shadow: 0 0px 3px #0008;
+    background-color: #e2e4e6;
+    box-shadow: 0 0px 3px #02040688;
     cursor: pointer;
 }
 
@@ -125,23 +125,23 @@ body {
     top: 16px;
     right: 16px;
     padding: 16px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 64px;
     transition-property: box-shadow bottom;
     transition-duration: 0.4s;
     border: 0;
-    background-color: white;
+    background-color: #f2f4f6;
     margin-bottom: 16px;
 }
 
 #formatting:hover {
-    box-shadow: 0 0px 8px #0008;
+    box-shadow: 0 0px 8px #02040688;
     cursor: pointer;
 }
 
 #formatting:active {
-    background-color: #eee;
-    box-shadow: 0 0px 3px #0008;
+    background-color: #e2e4e6;
+    box-shadow: 0 0px 3px #02040688;
     cursor: pointer;
 }
 

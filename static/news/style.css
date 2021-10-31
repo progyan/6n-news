@@ -11,7 +11,7 @@ body>h1 {
 }
 
 #description {
-    color: gray;
+    color: #828486;
     font-size: smaller; /*0.8em;*/
     text-align: center;
     margin-top: 0;
@@ -24,10 +24,10 @@ body {
 }
 
 #main {
-    box-shadow: 0 2px 16px #0004;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 16px;
-    border-top: 4px solid #ddd;
-    border-bottom: 4px solid #ddd;
+    border-top: 4px solid #D2D4D6;
+    border-bottom: 4px solid #D2D4D6;
     padding: 16px 16px 16px 32px;
     overflow: hidden;
 }
@@ -44,29 +44,29 @@ body {
     display: inline;
     border-radius: 48px;
     margin-left: 16px;
-    box-shadow: 0 2px 16px #0004;
+    box-shadow: 0 2px 16px #02040688;
 }
 
 #delete {
     bottom: 16px;
     right: 16px;
     padding: 16px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 64px;
     transition-property: box-shadow bottom background-color;
     transition-duration: 0.4s;
     border: 0;
-    background-color: white;
+    background-color: #f2f4f6;
 }
 
 #delete:hover {
-    box-shadow: 0 0px 8px #0008;
+    box-shadow: 0 0px 8px #02040688;
     cursor: pointer;
 }
 
 #delete:active {
-    background-color: #eee;
-    box-shadow: 0 0px 3px #0008;
+    background-color: #e2e4e6;
+    box-shadow: 0 0px 3px #02040688;
     cursor: pointer;
 }
 
@@ -74,23 +74,23 @@ body {
     bottom: 16px;
     right: 16px;
     padding: 16px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 64px;
     transition-property: box-shadow bottom background-color;
     transition-duration: 0.4s;
     border: 0;
-    background-color: white;
+    background-color: #f2f4f6;
     margin-right: 16px;
 }
 
 #rewrite:hover {
-    box-shadow: 0 0px 8px #0008;
+    box-shadow: 0 0px 8px #02040688;
     cursor: pointer;
 }
 
 #rewrite:active {
-    background-color: #eee;
-    box-shadow: 0 0px 3px #0008;
+    background-color: #e2e4e6;
+    box-shadow: 0 0px 3px #02040688;
     cursor: pointer;
 }
 
@@ -98,22 +98,22 @@ body {
     bottom: 16px;
     left: 16px;
     padding: 16px;
-    box-shadow: 0 2px 16px #0008;
+    box-shadow: 0 2px 16px #02040688;
     border-radius: 64px;
     transition-property: box-shadow bottom background-color;
     transition-duration: 0.4s;
     border: 0;
-    background-color: white;
+    background-color: #f2f4f6;
 }
 
 #back:hover {
-    box-shadow: 0 0px 8px #0008;
+    box-shadow: 0 0px 8px #02040688;
     cursor: pointer;
 }
 
 #back:active {
-    background-color: #eee;
-    box-shadow: 0 0px 3px #0008;
+    background-color: #e2e4e6;
+    box-shadow: 0 0px 3px #02040688;
     cursor: pointer;
 }
 
