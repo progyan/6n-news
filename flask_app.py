@@ -6,6 +6,7 @@ from flask_cors import CORS
 import psycopg2
 import os
 from datetime import date
+import threading
 
 from werkzeug.utils import environ_property
 
@@ -111,18 +112,20 @@ def update_news(id):
                 cur.execute('SELECT endpoint, p256dh, auth FROM subscriptions;')
                 #app.logger.debug(cur.fetchall())
                 for sub in cur.fetchall():
-                    webpush(
-                        subscription_info={
-                            "endpoint": sub[0],
-                            "keys": {
-                                "p256dh": sub[1],
-                                "auth": sub[2]
-                            }
-                        },
-                        data=("6Н: " + request.json[0] + " изменил(а) новость \"" + request.json[1] + "\""),
-                        vapid_private_key=os.environ["WEB_PUSH_KEY"],
-                        vapid_claims={"sub": "mailto:yancolabs@gmail.com"}
-                    )
+                    threading.Thread(target=lambda:
+                        webpush(
+                            subscription_info={
+                                "endpoint": sub[0],
+                                "keys": {
+                                    "p256dh": sub[1],
+                                    "auth": sub[2]
+                                }
+                            },
+                            data=("6Н: " + request.json[0] + " изменил(а) новость \"" + request.json[1] + "\""),
+                            vapid_private_key=os.environ["WEB_PUSH_KEY"],
+                            vapid_claims={"sub": "mailto:yancolabs@gmail.com"}
+                        )
+                    ).start()
                 return jsonify("OK")
             else:
                 return jsonify("NO RIGHTS")
