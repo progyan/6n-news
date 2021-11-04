@@ -11,7 +11,7 @@ if (localStorage.getItem("rewritingNews")) {
     document.getElementById("news-type").value = news[3];
     document.getElementById("title").value = news[1];
     document.getElementById("text").value = news[2];
-    document.getElementById("is_important").checked = news[4];
+    document.getElementById("is_important").checked = !news[4];
     localStorage.setItem("rewritingNews", "");
     rewriting = true;
 }
