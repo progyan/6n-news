@@ -81,7 +81,7 @@ function submitNews() {
                 'headers': {
                     'Content-Type': 'application/json'
                 },      
-                'body': JSON.stringify([news[0], news[1], news[2], news[3], news[5]])
+                'body': JSON.stringify([user, title, text, newsType, isImportant])
             }).then((resp) => {
                 resp.json().then((code) => {
                     if (code == "NO RIGHTS") {

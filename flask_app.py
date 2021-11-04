@@ -108,7 +108,6 @@ def update_news(id):
                 cur.execute('UPDATE news SET creator = %s, title = %s, content = %s, news_type = %s, is_important = %s, creation_date = %s WHERE id = %s;',
                         request.json + [date.today(), id])
                 con.commit()
-                # TODO: make async
                 cur.execute('SELECT endpoint, p256dh, auth FROM subscriptions;')
                 #app.logger.debug(cur.fetchall())
                 for sub in cur.fetchall():
