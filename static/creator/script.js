@@ -76,21 +76,25 @@ function submitNews() {
                 }) 
             });
         } else {
-            fetch("/updatenews/" + news[4], { 
-                'method': "post", 
-                'headers': {
-                    'Content-Type': 'application/json'
-                },      
-                'body': JSON.stringify([user, title, text, newsType, isImportant])
-            }).then((resp) => {
-                resp.json().then((code) => {
-                    if (code == "NO RIGHTS") {
-                        alert("Это не ваша новость. Вы не можете изменять чужие новости.");
-                    } else {
-                        window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html';
-                    }
-                });
-            });
+            fetch("/getuser")
+                .then((resp) => { resp.text().then((user) => {  
+                    fetch("/updatenews/" + news[4], { 
+                        'method': "post", 
+                        'headers': {
+                            'Content-Type': 'application/json'
+                        },      
+                        'body': JSON.stringify([user, title, text, newsType, isImportant])
+                    }).then((resp) => {
+                        resp.json().then((code) => {
+                            if (code == "NO RIGHTS") {
+                                alert("Это не ваша новость. Вы не можете изменять чужие новости.");
+                            } else {
+                                window.location.href = 'https://news-6n.herokuapp.com/pages/main/index.html';
+                            }
+                        });
+                    });
+                })
+            })  
         }
     };
 }
