@@ -1,3 +1,4 @@
+
 let lowercase_names = {
     "Ю. Е. Козуб": "юлии евгеньевны козуб",
     "Ян Бобрус": "яна бобруса"
@@ -100,5 +101,5 @@ function submitNews() {
 }
 
 function textChanged() {
-    markedd.innerHTML = marked(unmarked.value)
+    markedd.innerHTML = marked.parse(unmarked.value)
 }
