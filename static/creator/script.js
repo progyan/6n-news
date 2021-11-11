@@ -103,3 +103,5 @@ function submitNews() {
 function textChanged() {
     markedd.innerHTML = marked.parse(unmarked.value)
 }
+
+textChanged()
